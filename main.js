@@ -20,10 +20,13 @@ for (let i = 1; i <= 20; i++) {
 // •  Если число не угадано, программа повторно запрашивает ввод, пока пользователь не угадает.
 // 2.  Используйте цикл while и логический оператор !== для проверки правильности ввода.
 
-random = Math.floor(Math.random() * 10) + 1;
+let random = Math.floor(Math.random() * 10) + 1;
 
-guess = Number(prompt("Угадай число "));
-
+let guess = Number(prompt("Угадай число "));
+while (isNaN(guess) || 1 > guess || guess > 10) {
+  alert("Пожалуйста, введите число от 1 до 10.");
+  guess = Number(prompt("Попробуй ещё раз, введите число от 1 до 10:"));
+}
 while (guess !== random) {
   if (guess < random) {
     guess = Number(prompt("Попробуй ещё раз, твоё число меньше загаданного: "));
