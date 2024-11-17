@@ -28,7 +28,10 @@ while (isNaN(guess) || 1 > guess || guess > 10) {
   guess = Number(prompt("Попробуй ещё раз, введите число от 1 до 10:"));
 }
 while (guess !== random) {
-  if (guess < random) {
+  if (isNaN(guess)) {
+    alert("Пожалуйста, введите корректное число.");
+    guess = Number(prompt("Попробуй ещё раз, введите число от 1 до 10: "));
+  } else if (guess < random) {
     guess = Number(prompt("Попробуй ещё раз, твоё число меньше загаданного: "));
   } else {
     guess = Number(prompt("Попробуй ещё раз, твоё число больше загаданного"));
